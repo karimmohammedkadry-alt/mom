@@ -1,243 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff5f2">
+<meta name="theme-color" content="#5a2828">
 <title>لماما.. من قلب ابنك ❤️</title>
 <style>
-:root{--rose:#d94f70;--rose2:#a92f51;--cream:#fff8f1;--ink:#49323a;--gold:#d6ad68}
+:root{--wine:#742b37;--rose:#c84b63;--paper:#f8e6c9;--ink:#39252a;--gold:#e6bd83}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);font-family:Roboto,"Arial",sans-serif;line-height:1.9;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;background:radial-gradient(circle at 10% 0,#ffe1e6,transparent 28%),radial-gradient(circle at 95% 35%,#ffedcf,transparent 25%),linear-gradient(145deg,#fffaf4,#fff0f4);overflow-x:hidden}
-a{color:inherit}button{font:inherit;cursor:pointer}
-nav{position:sticky;top:0;z-index:9;display:flex;justify-content:center;gap:7px;flex-wrap:wrap;padding:10px;background:#fff8f1e8;backdrop-filter:blur(12px);border-bottom:1px solid #eecfd6}
-nav a{text-decoration:none;padding:6px 12px;border-radius:30px;font-size:.9rem}nav a:hover{background:#ffe0e7}
-.hero{min-height:90vh;display:grid;place-items:center;text-align:center;padding:48px 18px;position:relative;isolation:isolate}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(#fff7f2a8,#fff7f2c9);z-index:-1}
-.hero-inner{max-width:820px}.eyebrow{color:var(--rose2);font-weight:bold}
-h1{font-size:clamp(2.2rem,7vw,4.5rem);line-height:1.3;margin:10px 0}h1 span{color:var(--rose)}
-.lead{font-size:clamp(1rem,2.8vw,1.2rem);max-width:680px;margin:0 auto 20px}
-.btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;background:var(--rose);color:white;text-decoration:none;box-shadow:0 8px 22px #d94f7030;transition:.25s}
-.btn:hover{background:var(--rose2);transform:translateY(-2px)}.btn.light{background:#fff;color:var(--rose2);border:1px solid #f0ccd5;box-shadow:none}
-.gift-wrap{height:150px;display:grid;place-items:center;margin:10px auto}
-.gift{width:130px;height:110px;position:relative;background:transparent;border:0;transition:.4s;filter:drop-shadow(0 10px 10px #ad45632c)}
-.box{position:absolute;bottom:0;left:8px;width:114px;height:72px;border-radius:6px;background:linear-gradient(130deg,#ff9bb0,#d94368);border:2px solid #c83e60}
-.box:after{content:"";position:absolute;left:45px;top:0;width:21px;height:100%;background:#ffe7ad}
-.lid{position:absolute;top:28px;left:0;width:130px;height:20px;border-radius:5px;background:#f77e99;border:2px solid #c83e60;transform-origin:right;transition:.6s}
-.bow:before,.bow:after{content:"";position:absolute;top:4px;width:26px;height:18px;border:5px solid #c83e60;border-radius:80% 80% 20% 80%}
-.bow:before{left:40px;transform:rotate(25deg)}.bow:after{left:64px;transform:scaleX(-1) rotate(25deg)}
-.gift.open .lid{transform:translateY(-35px) rotate(15deg)}.gift.open{transform:translateY(-4px)}
-section{padding:64px 17px;scroll-margin-top:70px}.container{max-width:1000px;margin:auto}
-.heading{text-align:center;margin-bottom:28px}.heading h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:4px;color:#873b51}.heading p{margin:0;color:#896b73}
-.panel{background:#ffffffc9;border:1px solid #fff;box-shadow:0 18px 55px #9f516319;border-radius:25px;padding:clamp(20px,4vw,40px)}
-.letter{max-width:820px;margin:auto;font-size:1.06rem}.letter p{margin:0 0 15px}.sign{font-weight:bold;color:var(--rose2);font-size:1.15rem}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.photo{margin:0;background:#fff;padding:8px 8px 13px;border-radius:15px;box-shadow:0 8px 25px #773c4b12;transform:rotate(var(--tilt,0deg));transition:.25s}
-.photo:hover{transform:translateY(-5px) rotate(0)}.photo img{width:100%;height:310px;object-fit:cover;border-radius:10px;display:block}.photo figcaption{text-align:center;padding:8px 3px 0;color:#8f4b5d;font-size:.92rem}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:#fff;border:1px solid #f7dce2;border-radius:18px;padding:22px;text-align:center}.card .emoji{font-size:2.1rem}.card h3{margin:6px 0;color:#963e56}.card p{margin:0;color:#80666d}
-.promises{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.promise{background:#fff9fa;border:1px solid #f6dce2;border-radius:14px;padding:14px}.promise:before{content:"♡";color:var(--rose);font-size:1.2rem;margin-left:8px}
-.final{text-align:center;background:linear-gradient(135deg,#fff0f3,#fff8eb)}.heart{font-size:3rem;color:var(--rose);animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.13)}}
-footer{text-align:center;padding:25px 12px;color:#9b7881;font-size:.9rem}
-.float{position:fixed;bottom:-30px;pointer-events:none;z-index:20;animation:up 3.6s ease-in forwards}@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
-.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#563641;color:white;padding:12px 18px;border-radius:15px;z-index:30;max-width:90%;text-align:center;box-shadow:0 8px 30px #0002}
-@media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}.photo img{height:260px}.cards{grid-template-columns:1fr}.hero{min-height:80vh}}
-@media(max-width:480px){.gallery{grid-template-columns:1fr 1fr;gap:9px}.photo{padding:5px 5px 10px}.photo img{height:220px}nav a{font-size:.8rem;padding:6px 8px}.promises{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
-/* نافذة الرسالة الكاملة */
-.letter-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(55,22,35,.72);backdrop-filter:blur(9px);overflow:auto}
-.letter-modal.show{display:flex;animation:modalFade .35s ease}
-@keyframes modalFade{from{opacity:0}to{opacity:1}}
-.modal-shell{position:relative;width:min(920px,100%);max-height:92vh;overflow:auto;border-radius:28px;padding:clamp(16px,3vw,30px);background:linear-gradient(145deg,#fffaf5,#fff0f5);border:2px solid #f3cfaa;box-shadow:0 25px 90px #16061066}
-.modal-close{position:sticky;top:0;float:left;border:0;background:#ffe0e8;color:#9f2f51;width:42px;height:42px;border-radius:50%;font-size:1.5rem;z-index:2}
-.modal-title{font-family:Roboto,Arial,sans-serif;font-weight:700;text-align:center;color:#9d3d59;margin:4px 42px 18px;font-size:clamp(1.5rem,4vw,2.4rem)}
-.photo-frame{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 auto 20px;max-width:760px;position:relative}
-.photo-frame:before,.photo-frame:after{content:"🌹 🌸 🌷 🌸 🌹";position:absolute;left:0;right:0;text-align:center;color:#c64f72;letter-spacing:6px;font-size:clamp(13px,2.5vw,22px);pointer-events:none}
-.photo-frame:before{top:-21px}.photo-frame:after{bottom:-22px}
-.photo-frame img{width:100%;height:clamp(85px,16vw,165px);object-fit:cover;border:4px solid white;border-radius:14px;box-shadow:0 5px 15px #7d35441c}
-.modal-message{font-family:Roboto,Arial,sans-serif;font-weight:400;background:#ffffffd9;border:1px solid #f3d5dc;border-radius:22px;padding:clamp(18px,4vw,38px);line-height:2.05;font-size:clamp(1rem,2.5vw,1.12rem);white-space:normal;position:relative}
-.modal-message:before{content:"🌸  💗  🌷  💗  🌸";display:block;text-align:center;margin-bottom:12px;font-size:1.25rem;letter-spacing:4px}
-.modal-message:after{content:"🌹  🤍  🌹";display:block;text-align:center;margin-top:16px;font-size:1.3rem;letter-spacing:8px}
-.modal-message p{margin:0 0 14px}
-.modal-sign{color:#a33456;font-weight:bold;text-align:left}
-body.modal-open{overflow:hidden}
-@media(max-width:500px){.letter-modal{padding:8px}.modal-shell{padding:12px;border-radius:20px;max-height:96vh}.photo-frame{gap:5px}.photo-frame img{border-width:3px;border-radius:9px}.photo-frame:before,.photo-frame:after{letter-spacing:1px}.modal-message{padding:15px}}
-
-
-/* Scrapbook-style home page inspired by the visual preview */
-.scrapbook-hero{min-height:calc(100vh - 48px);padding:42px 22px 58px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#ffe8d6 0,#f8d9c9 45%,#bd7b70 100%);isolation:isolate}
-.scrapbook-hero:before{background:linear-gradient(135deg,#fff3e6a8,#e9b7b9a8)}
-.scrapbook-layout{width:min(1380px,100%);margin:auto;display:grid;grid-template-columns:minmax(190px,1fr) minmax(360px,1.6fr) minmax(190px,1fr);align-items:center;gap:clamp(14px,2vw,34px);position:relative;z-index:1}
-.paper-card{position:relative;background:linear-gradient(145deg,#fff0d9,#ffe6cc 65%,#f8d9bc);color:#543a37;padding:clamp(22px,3vw,42px);border:1px solid #e5b995;box-shadow:0 18px 55px #57251d40, inset 0 0 45px #bd78451c;border-radius:5px 18px 8px 16px;transform:rotate(-.4deg);text-align:center;max-width:690px;margin:auto}
-.paper-card:before{content:"";position:absolute;inset:10px;border:1px solid #d5a88780;pointer-events:none;border-radius:3px}
-.paper-card h1{font-family:Roboto,Arial,sans-serif;font-weight:700;font-size:clamp(2.2rem,4vw,4rem);color:#9e2e48;margin:6px 0 0}
-.paper-card h1 span{color:#b42f52}.paper-rule{color:#c45c69;letter-spacing:4px;margin:4px 0 15px}
-.paper-card .lead{max-width:610px;line-height:2.15;margin:0 auto 6px;font-size:clamp(1rem,1.35vw,1.15rem)}
-.paper-card #hint{color:#89575b;margin:0 0 10px}.paper-card .gift-wrap{height:110px;margin:0 auto}.paper-card .gift{transform:scale(.82)}.paper-card .btn{position:relative;z-index:2;margin:5px 3px}.full-letter-btn{background:#a92f51!important}.paper-sign{margin-top:22px;color:#963b50;font-family:Roboto,Arial,sans-serif;font-weight:500;font-size:1.05rem;font-style:italic}.paper-sign span{font-size:1.5rem;color:#c43d5f;margin-right:8px}
-.scrapbook-photos{display:flex;flex-direction:column;gap:18px;align-items:center}.scrap-photo{width:min(100%,280px);margin:0;background:#fff7e9;padding:8px 8px 11px;box-shadow:0 9px 25px #49201e42;border:1px solid #e6cbb1;position:relative}.scrap-photo:after{content:"♡";position:absolute;top:-14px;right:12px;color:#c94b69;font-size:27px;text-shadow:0 2px 3px #fff}
-.scrap-photo img{display:block;width:100%;height:clamp(130px,17vw,210px);object-fit:cover}.scrap-photo figcaption{text-align:center;padding-top:7px;color:#8e4855;font-size:.85rem}.tilt-a{transform:rotate(-5deg)}.tilt-b{transform:rotate(4deg);margin-right:12px}.tilt-c{transform:rotate(-2deg)}.tilt-d{transform:rotate(4deg)}.tilt-e{transform:rotate(-4deg);margin-left:12px}.tilt-f{transform:rotate(3deg)}
-.scrapbook-decor{position:absolute;z-index:0;font-size:clamp(24px,3vw,42px);line-height:1.8;opacity:.65;filter:drop-shadow(0 3px 5px #fff5)}.decor-left{left:2%;top:20%}.decor-right{right:2%;bottom:18%}.scrapbook-bottom-florals{position:absolute;bottom:5px;left:0;right:0;text-align:center;letter-spacing:8px;font-size:clamp(20px,3vw,34px);opacity:.9}
-@media(max-width:900px){.scrapbook-layout{grid-template-columns:1fr;max-width:680px}.scrapbook-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;order:2}.paper-card{order:1}.scrap-photo{width:100%;padding:5px 5px 8px}.scrap-photo img{height:clamp(95px,20vw,170px)}.photos-right{order:3}.scrapbook-decor{font-size:22px}.scrapbook-hero{padding:30px 12px 50px}}
-@media(max-width:520px){.scrapbook-layout{gap:16px}.paper-card{padding:24px 17px}.paper-card .lead{font-size:.98rem}.scrapbook-photos{gap:6px}.scrap-photo img{height:105px}.scrap-photo figcaption{font-size:.7rem}.scrapbook-decor{display:none}.paper-card .btn{font-size:.9rem;padding:10px 16px}.scrapbook-bottom-florals{letter-spacing:2px}}
-
-
-/* Minimal, calm, polished visual style */
-:root{
-  --bg:#fffaf8;
-  --paper:#ffffff;
-  --ink:#342a2d;
-  --muted:#78686c;
-  --rose:#b85e73;
-  --rose-soft:#f7e8ec;
-  --line:#f0dce1;
-  --shadow:0 12px 34px rgba(77,39,49,.08);
-}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg)!important;
-  color:var(--ink)!important;
-  font-family:Roboto, "Arial", sans-serif!important;
-  line-height:1.75!important;
-  letter-spacing:0!important;
-}
-h1,h2,h3,.title,.hero-title{
-  color:var(--ink)!important;
-  font-family:Roboto, "Arial", sans-serif!important;
-  letter-spacing:-.02em!important;
-  line-height:1.35!important;
-}
-p,button,.btn,.modal-message,.letter,.message{
-  font-family:Roboto, "Arial", sans-serif!important;
-}
-button,.btn{
-  box-shadow:none!important;
-  border-radius:14px!important;
-  font-weight:600!important;
-  transition:transform .18s ease, background .18s ease!important;
-}
-button:hover,.btn:hover{transform:translateY(-1px)!important}
-button:focus-visible,.btn:focus-visible{
-  outline:3px solid #e6a9b8!important;outline-offset:3px!important;
-}
-img{
-  box-shadow:0 5px 16px rgba(65,36,43,.08)!important;
-}
-.letter-modal{
-  background:rgba(38,25,29,.48)!important;
-  backdrop-filter:blur(5px)!important;
-}
-.modal-shell{
-  background:#fffaf8!important;
-  border:1px solid var(--line)!important;
-  box-shadow:0 20px 65px rgba(28,15,19,.18)!important;
-  border-radius:22px!important;
-}
-.modal-title{
-  color:var(--rose)!important;
-  font-weight:700!important;
-}
-.photo-frame{gap:8px!important}
-.photo-frame img{
-  border:3px solid #fff!important;
-  border-radius:12px!important;
-}
-.modal-message{
-  background:#fff!important;
-  color:#3c3034!important;
-  border:1px solid var(--line)!important;
-  border-radius:16px!important;
-  line-height:2!important;
-  font-size:1.05rem!important;
-  box-shadow:none!important;
-}
-.modal-message:before,.modal-message:after{
-  letter-spacing:2px!important;
-  font-size:1rem!important;
-}
-.modal-close{
-  background:var(--rose-soft)!important;
-  color:var(--rose)!important;
-  box-shadow:none!important;
-}
-@media(max-width:520px){
-  body{line-height:1.7!important}
-  .modal-shell{border-radius:18px!important}
-  .modal-message{font-size:1rem!important;line-height:1.9!important}
-}
-/* Keep decorative elements subtle instead of visually busy */
-.heart,.floating-heart,.petal,.sparkle{opacity:.35}
-
-
-:root{--ink:#342a2d;--rose:#b85e73;--line:#f0dce1}
-body{background:#fffaf8!important;color:var(--ink)!important;font-family:Roboto,Arial,sans-serif!important;line-height:1.8!important}
-.hero{min-height:100svh!important;padding:28px 18px!important}
-.hero-inner{max-width:720px!important;background:#fff!important;border:1px solid #f0dce1!important;border-radius:28px!important;padding:clamp(25px,5vw,52px)!important;box-shadow:0 16px 45px rgba(77,39,49,.07)!important}
-.hero .eyebrow{color:#b85e73!important}
-.hero h1{font-size:clamp(2.3rem,7vw,4rem)!important;color:#342a2d!important}
-.hero .lead{color:#78686c!important}
-.gift-wrap{margin:12px auto!important}
-.btn{background:#b85e73!important;border-radius:14px!important;padding:13px 25px!important;box-shadow:none!important}
-.letter-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:12px;background:rgba(38,25,29,.52)!important;backdrop-filter:blur(5px);overflow:auto}
-.letter-modal.show{display:flex;animation:modalFade .25s ease}
-.modal-shell{position:relative;width:min(900px,100%);max-height:96vh;overflow:auto;border-radius:22px;padding:clamp(14px,3vw,28px);background:#fffaf8!important;border:1px solid #f0dce1;box-shadow:0 20px 65px rgba(28,15,19,.18)}
-.modal-close{position:sticky;top:0;float:left;border:0;background:#f7e8ec;color:#b85e73;width:40px;height:40px;border-radius:50%;font-size:1.5rem;z-index:2}
-.modal-title{text-align:center;color:#b85e73;margin:5px 42px 20px;font-size:clamp(1.5rem,4vw,2.2rem)}
-.photo-frame{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px auto 22px;max-width:760px}
-.photo-frame img{width:100%;height:clamp(80px,15vw,150px);object-fit:cover;border:3px solid white;border-radius:12px;box-shadow:0 5px 16px rgba(65,36,43,.08)}
-.modal-message{background:#fff;border:1px solid #f0dce1;border-radius:16px;padding:clamp(18px,4vw,34px);line-height:2;font-size:1.05rem;color:#3c3034}
-.modal-message p{margin:0 0 14px}
-.modal-sign{color:#a34c64;font-weight:700}
-.modal-message:before{content:"🌷";display:block;text-align:center;margin-bottom:12px}
-.modal-message:after{content:"🌷";display:block;text-align:center;margin-top:12px}
-footer{display:none!important}
-@keyframes modalFade{from{opacity:0}to{opacity:1}}
-@media(max-width:520px){.modal-shell{padding:12px;border-radius:17px}.photo-frame{gap:5px}.photo-frame img{height:90px;border-width:2px}.modal-message{font-size:1rem;line-height:1.9;padding:15px}}
-
+body{margin:0;min-height:100vh;color:#fff8ed;font-family:Tahoma,Arial,sans-serif;background:
+radial-gradient(ellipse at 50% 0%,rgba(255,214,160,.25),transparent 38%),
+linear-gradient(125deg,rgba(58,22,28,.68),rgba(119,54,45,.34)),#54272b;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:
+radial-gradient(circle at 12% 18%,#ffdda2 0 1px,transparent 4px),
+radial-gradient(circle at 82% 8%,#ffe9bd 0 2px,transparent 6px),
+radial-gradient(circle at 90% 44%,#f9cfa1 0 1px,transparent 5px),
+radial-gradient(circle at 6% 76%,#ffd9a1 0 2px,transparent 6px),
+linear-gradient(180deg,#5a2b2b,#8c493b 62%,#48272b)}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 3vw;color:#ffe5e2;font-size:clamp(14px,2vw,22px);position:relative;z-index:2}
+.topbar .brand{font-weight:700;letter-spacing:.2px}
+.topbar .music{font-size:14px;opacity:.9;white-space:nowrap}
+.layout{width:min(1480px,100%);margin:0 auto;padding:0 18px 50px;display:grid;grid-template-columns:minmax(210px,1fr) minmax(400px,1.35fr) minmax(210px,1fr);gap:clamp(12px,2.5vw,34px);align-items:start}
+.side{display:flex;flex-direction:column;gap:18px;padding-top:22px}
+.photo{padding:9px 9px 26px;background:#f8e8d8;box-shadow:0 12px 30px #2c12164d;transform:rotate(-4deg);position:relative;transition:transform .3s}
+.photo:nth-child(even){transform:rotate(3deg)}
+.photo:hover{transform:rotate(0) translateY(-3px)}
+.photo img{display:block;width:100%;aspect-ratio:1.12;object-fit:cover;background:#e4c7af}
+.photo:after{content:"♥";position:absolute;right:8px;bottom:0;color:#c34b62;font-size:26px}
+.note{background:#f4dfbd;color:#7e4142;padding:18px 15px;text-align:center;box-shadow:0 8px 20px #2c121633;transform:rotate(3deg);font-size:18px;line-height:1.8}
+.center{position:relative;padding:clamp(24px,4vw,48px) clamp(20px,4vw,48px) 30px;color:var(--ink);background:
+radial-gradient(ellipse at 20% 10%,#fff7e6 0,transparent 36%),
+linear-gradient(135deg,#f8e7c9,#f2d6b7);box-shadow:0 16px 38px #26101670;clip-path:polygon(1% 1%,4% 0,8% 1%,13% 0,18% 1%,23% 0,29% 1%,34% 0,40% 1%,47% 0,53% 1%,60% 0,66% 1%,72% 0,78% 1%,84% 0,90% 1%,96% 0,100% 2%,99% 10%,100% 18%,99% 27%,100% 35%,99% 44%,100% 53%,99% 62%,100% 71%,99% 81%,100% 90%,98% 100%,90% 99%,82% 100%,73% 99%,64% 100%,55% 99%,46% 100%,37% 99%,28% 100%,19% 99%,10% 100%,1% 98%,0 90%,1% 80%,0 70%,1% 60%,0 50%,1% 40%,0 30%,1% 20%,0 10%);min-height:650px}
+.center h1{text-align:center;color:#a42c43;font-size:clamp(30px,4vw,50px);margin:0 0 18px;line-height:1.3}
+.heart-line{text-align:center;color:#c34b62;font-size:23px;letter-spacing:12px;margin-bottom:12px}
+.center .intro{font-size:clamp(15px,1.5vw,18px);line-height:1.95;text-align:center}
+.section-title{text-align:center;color:#9b3146;font-size:23px;margin:28px 0 10px}
+.seen{border-top:1px dashed #c78f7d;border-bottom:1px dashed #c78f7d;padding:13px 0;margin-top:22px;text-align:center;line-height:1.9}
+.cta-wrap{text-align:center;margin-top:26px}
+.cta{border:2px solid #f8c9c8;border-radius:999px;background:linear-gradient(135deg,#d43e5d,#a92b4b);color:white;font:inherit;font-size:18px;padding:14px 25px;cursor:pointer;box-shadow:0 5px 0 #7d263a,0 10px 18px #6b283333;transition:transform .2s}
+.cta:hover{transform:translateY(-2px)}
+.hint{font-size:13px;color:#8f5960;margin-top:12px}
+.decor{position:fixed;bottom:10px;left:12px;font-size:28px;opacity:.75;pointer-events:none}
+.modal{display:none;position:fixed;inset:0;z-index:10;background:#211116c9;backdrop-filter:blur(6px);padding:14px;align-items:center;justify-content:center}
+.modal.open{display:flex;animation:fade .22s ease}
+.modal-card{width:min(850px,100%);max-height:94vh;overflow:auto;position:relative;background:linear-gradient(135deg,#fff1d9,#f4ddbd);color:#39252a;border-radius:12px;padding:28px clamp(18px,4vw,42px);box-shadow:0 20px 70px #160b0dcc;border:1px solid #f6d7a9}
+.close{position:sticky;top:0;float:left;border:0;background:#f4cfd3;color:#852c42;width:40px;height:40px;border-radius:50%;font-size:25px;cursor:pointer}
+.modal-card h2{text-align:center;color:#a42c43;font-size:30px;margin:8px 35px 18px}
+.modal-photos{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:15px 0 24px}
+.modal-photos img{width:100%;height:90px;object-fit:cover;border:4px solid #fff9ee;box-shadow:0 3px 10px #54322b30}
+.letter p{line-height:2.05;font-size:17px;margin:0 0 15px}
+.letter p:first-child{font-weight:bold;color:#9f3047;font-size:19px}
+.signoff{text-align:center;color:#9f3047;margin-top:24px!important}
+.signoff span{display:inline-block;margin-top:8px;font-size:24px;font-weight:bold}
+footer{text-align:center;color:#f7d9cf;padding:0 15px 28px;font-size:14px}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);}.side.right{display:none}.center{grid-column:2;grid-row:1}.side.left{grid-column:1;grid-row:1}.photo:nth-child(n+3){display:none}}
+@media(max-width:650px){.topbar{padding:14px 16px}.layout{display:flex;flex-direction:column;padding:0 12px 28px;gap:18px}.center{order:1;width:100%;padding:27px 23px 30px;min-height:auto}.side{order:2;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:0}.side.right{display:grid}.photo:nth-child(n){display:block;transform:rotate(-2deg);padding:6px 6px 19px}.photo img{aspect-ratio:1.1}.note{font-size:15px;padding:10px}.modal-photos{grid-template-columns:repeat(3,1fr)}.modal-photos img{height:85px}.modal-card h2{font-size:24px}.letter p{font-size:16px;line-height:1.95}.music{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header class="hero scrapbook-hero" id="home">
- <div class="scrapbook-decor decor-left" aria-hidden="true">🌹 🌸 🌷<br>💗 🌿 💗<br>🌷 🌸 🌹</div>
- <div class="scrapbook-decor decor-right" aria-hidden="true">🌸 💗 🌹<br>🌿 🌷 🌿<br>🌹 💗 🌸</div>
- <div class="scrapbook-layout">
-  <div class="scrapbook-photos photos-left" aria-label="صور ذكرياتنا">
-   <figure class="scrap-photo tilt-a"><img src="mom-1.jpg" alt="كريم وماما في ذكرى جميلة"><figcaption>أجمل نعمة في حياتي ♡</figcaption></figure>
-   <figure class="scrap-photo tilt-b"><img src="mom-3.jpg" alt="صورة كريم مع والدته"><figcaption>ضحكتك بالدنيا كلها</figcaption></figure>
-   <figure class="scrap-photo tilt-c"><img src="mom-4.jpg" alt="كريم وماما على البحر"><figcaption>ذكرياتنا الحلوة 🌊</figcaption></figure>
+<div class="topbar"><div class="brand">⌂ &nbsp; لماما .. من قلب ابنك &nbsp; 💗</div><div class="music">♫ &nbsp; موسيقى هادية &nbsp; ♥</div></div>
+<main class="layout">
+ <aside class="side left">
+  <div class="photo"><img src="mom-1.jpg" alt="ذكرى جميلة مع ماما"></div>
+  <div class="photo"><img src="mom-2.jpg" alt="أنا وماما"></div>
+  <div class="photo"><img src="mom-3.jpg" alt="ذكرى مع ماما"></div>
+  <div class="note">أنتِ أجمل نعمة<br>في حياتي ♡</div>
+ </aside>
+ <section class="center">
+  <div class="heart-line">♡ &nbsp;&nbsp; ♡</div>
+  <h1>ماما حبيبتي</h1>
+  <div class="intro">
+   <p>أول حاجة.. أنا عارف قد إيه تعبك عليّا، وبتتعبي طول الوقت عشاني. أنا أكون كويس، وتشتغلي ومش بتقولي كلمة، وتتحملي كتير بكل صبر وحب. أنا عارف إنك تعبانة ودماغك محروقة عليّا، وبتسندي لذاتي أحيانًا عشان تشوفيني بخير، وإنك كمان بتقلقي عليّا أكتر من نفسك.</p>
+   <p>ماما.. إنتِ بالنسبة ليا مش بس أمي، إنتِ كل حاجة.. إنتِ رقم واحد في حياتي، وأنا بحبك من قلبي، ومش عارف أعيش من غيرك.</p>
   </div>
-  <div class="paper-card">
-   <div class="eyebrow">لأحنّ وأغلى أم في الدنيا ❤️</div>
-   <h1>ماما <span>حبيبتي</span> ♡</h1>
-   <div class="paper-rule">♡ ───── 🌷 ───── ♡</div>
-   <p class="lead">يا ماما، أنا عارف إنك بتتعبي عشاني، وإن خوفك عليّا ساعات بيبان في زعلك وقلقك. يمكن أنا اتعصبت وأنا مخنوق ومضغوط، بس ده مش مبرر لغلطي. إنتِ رقم واحد في حياتي، وأنا بحبك ومش عايز أكون سبب في زعلك أبدًا.</p>
-   <div class="gift-wrap"><button class="gift" id="gift" aria-label="افتحي الهدية"><span class="bow"></span><span class="lid"></span><span class="box"></span></button></div>
-   <p id="hint">الهدية دي ليكي من قلبي يا ماما 🎁</p>
-   <button class="btn full-letter-btn" id="openFullLetter">💌 اقري رسالتي يا ماما</button>
-   <div class="paper-sign">بحبك يا أمي.. دايمًا وأبدًا <span>♥</span></div>
+  <div class="seen"><div class="section-title">أنا شايف تعبك يا ماما 🌷</div>
+   أنا مقدّر كل مرة تعبتي فيها عشاني، وكل مرة خفتي عليّا حتى لو أنا مردّتش بالطريقة اللي تستاهليها. يمكن مش بقولها كتير، بس أنا شايف تعبك، وبحبك، ونفسي أفرّح قلبك وأخليكي فخورة بيا.
   </div>
-  <div class="scrapbook-photos photos-right" aria-label="صور عائلية">
-   <figure class="scrap-photo tilt-d"><img src="mom-5.jpg" alt="كريم وماما في مناسبة"><figcaption>إنتِ سندي وأماني ♡</figcaption></figure>
-   <figure class="scrap-photo tilt-e"><img src="mom-2.jpg" alt="صورة قريبة لكريم ووالدته"><figcaption>بحبك يا ماما</figcaption></figure>
-   <figure class="scrap-photo tilt-f"><img src="mom-6.jpg" alt="ذكرى جميلة مع ماما"><figcaption>ربنا يخليكي ليا 🌷</figcaption></figure>
+  <div class="cta-wrap"><button class="cta" id="openLetter">♥ &nbsp; اقري رسالتي يا ماما &nbsp; ›</button><div class="hint">اضغطي على الزر لفتح الرسالة كاملة</div></div>
+ </section>
+ <aside class="side right">
+  <div class="photo"><img src="mom-4.jpg" alt="صورة ليا مع ماما"></div>
+  <div class="photo"><img src="mom-5.jpg" alt="ذكرى جميلة مع ماما"></div>
+  <div class="photo"><img src="mom-6.jpg" alt="أنا وماما"></div>
+  <div class="note">أمي.. أنتِ كل شيء<br>أنا بحبك ♡</div>
+ </aside>
+</main>
+<div class="decor" aria-hidden="true">🌹 🌸</div>
+<footer>دايمًا وأبدًا.. أنتِ أمنيتي ❤️</footer>
+<div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-card">
+  <button class="close" id="closeLetter" aria-label="إغلاق الرسالة">×</button>
+  <h2 id="modalTitle">ماما حبيبتي.. الكلام ده من قلبي ❤️</h2>
+  <div class="modal-photos">
+   <img src="mom-1.jpg" alt="ذكرى مع ماما"><img src="mom-2.jpg" alt="ذكرى مع ماما"><img src="mom-3.jpg" alt="ذكرى مع ماما"><img src="mom-4.jpg" alt="ذكرى مع ماما"><img src="mom-5.jpg" alt="ذكرى مع ماما"><img src="mom-6.jpg" alt="ذكرى مع ماما">
   </div>
- </div>
- <div class="scrapbook-bottom-florals" aria-hidden="true">🌹 🌷 🌸 💗 🌸 🌷 🌹</div>
-</header>
-<div class="letter-modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="modal-shell">
-  <button class="modal-close" id="closeLetter" aria-label="إغلاق الرسالة">×</button>
-  <h2 class="modal-title" id="modalTitle">ماما حبيبتي.. الرسالة دي من قلبي ❤️</h2>
-  <div class="photo-frame" aria-label="صور ذكرياتنا">
-   <img src="mom-1.jpg" alt="أنا وماما" loading="lazy">
-   <img src="mom-2.jpg" alt="ذكرى مع ماما" loading="lazy">
-   <img src="mom-3.jpg" alt="أنا وماما" loading="lazy">
-   <img src="mom-4.jpg" alt="أنا وماما على البحر" loading="lazy">
-   <img src="mom-5.jpg" alt="ذكرى مع ماما" loading="lazy">
-   <img src="mom-6.jpg" alt="أنا وماما" loading="lazy">
-  </div>
-  <article class="modal-message">
-<p>ماما حبيبتي، وأغلى وأحنّ إنسانة في حياتي ❤️</p>
+  <article class="letter"><p>ماما حبيبتي، وأغلى وأحنّ إنسانة في حياتي ❤️</p>
 <p>أنا مش عارف أبدأ كلامي إزاي، بس كل اللي أعرفه إني محتاج أقولك كلام كتير جوايا، يمكن مبعرفش أقولهولك في وشك، ويمكن ساعات تصرفاتي بتكون عكس كل اللي أنا حاسس بيه، بس والله يا ماما إنتِ غالية عندي أوي، أكتر ما تتخيلي.</p>
 <p>أنا عارف إنك بتتعبي وبتشتغلي وبتشقي، وإنك بتعملي حاجات كتير عشاني، وإنك بتشيلي همّي وبتفكري في مستقبلي ويمكن بتفضلي تفكري فيا حتى وإنتِ تعبانة. عارف إنك نفسك تشوفيني أحسن واحد، ناجح ومرتاح ومحقق اللي بتمناه، وإنك بتخافي عليّا من الدنيا ومن أي حاجة ممكن تضايقني أو تأذيني. أنا عارف إن دمك بيبقى محروق عليّا، وإنك ساعات بتزعلي مني لأنك خايفة عليّا وعايزاني أبقى أحسن.</p>
 <p>ويمكن أنا مش بعرف أقدّر كل ده بالطريقة اللي تستاهليها، ويمكن وقت الخناق بنسى كل التعب ده وبرد بعصبية، لكن ده مش معناه إني مش شايفه. بالعكس يا ماما، أنا نفسي أقدر أردلك ولو جزء صغير من تعبك عشاني، ونفسي ييجي اليوم اللي تشوفي فيه تعبي ونجاحي وتفرحي وتقولي إن كل اللي عملتيه عشاني مراحش على الفاضي.</p>
@@ -248,29 +108,18 @@ footer{display:none!important}
 <p>اللي حصل كان لحظة عصبية وغلبة شيطان، وأنا ندمان عليها بجد. مش هقولك إني عمري ما هتعصب أبدًا، لأنّي عارف إن التغيير محتاج مجهود، لكن بوعدك إني هحاول بجد أتحكم في نفسي، وأسكت وأهدى لما أحس إني هتعصب، وأرجع أتكلم معاكي باحترام. مش عايز أخلي دمك محروق بسببي تاني، ومش عايز اعتذاري يبقى مجرد كلام حلو وخلاص. عايزك تشوفي التغيير في تصرفاتي، وأثبتلك إني اتعلمت من غلطتي.</p>
 <p>أنا مش مستني منك تنسي زعلك في ثانية، ولا عايزك تسامحيني بالعافية. من حقك تزعلي، ومن حقك تقوليلي إنّي غلطت. أنا بس نفسي تديلي فرصة أصلّح اللي حصل، ونقعد نتكلم بهدوء، وأسمعك وأحكيلك اللي جوايا.</p>
 <p>ربنا يخليكي ليا يا ماما، ويحفظك من كل تعب، ويديكي الصحة وراحة البال، ويقدرني أفرح قلبك وأعوّضك عن كل يوم تعبتي فيه عشاني. نفسي أشوفك مبسوطة وفخورة بيا، ونفسي أكون ابن يطمن قلبك مش يحرق دمك.</p>
-<p>بحبك يا ماما، حب أكبر من الكلام، وإنتِ هتفضلي أغلى حد عندي ورقم واحد في حياتي. أنا آسف إني زعلتك، وآسف إني خليتك تشيلي همّي أكتر، وحقك عليّا يا أحنّ أم في الدنيا.</p>
-<p><strong>بحبك يا ماما، وربنا ما يحرمنيش منك أبدًا. ❤️</strong></p>
-<p class="modal-sign">ابنك اللي بيحبك، وبيغلط أوقات، لكنه بيحاول يتعلم ويبقى أحسن عشانه وعشانك.<br>كريم ❤️</p>
-</article>
-  <p style="text-align:center;color:#9d3d59;margin:18px 0 4px">🌷 بحبك يا ماما.. ربنا يخليكي ليا 🌷</p>
+<p>بحبك يا ماما، حب أكبر من الكلام، وإنتِ هتفضلي أغلى حد عندي ورقم واحد في حياتي. أنا آسف إني زعلتك، وآسف إني خليتك تشيلي همّي أكتر، وحقك عليّا يا أحنّ أم في الدنيا.</p><p class="signoff"><strong>بحبك يا ماما، وربنا ما يحرمنيش منك أبدًا. ❤️</strong><br>ابنك اللي بيحبك وبيحاول يبقى أحسن عشانه وعشانك.<br><span>كريم ❤️</span></p></article>
  </div>
 </div>
-
-
-
 <script>
-(function(){
- const modal=document.getElementById('letterModal');
- const openBtn=document.getElementById('openFullLetter');
- const closeBtn=document.getElementById('closeLetter');
- if(!modal||!openBtn||!closeBtn)return;
- function openLetter(){modal.classList.add('show');document.body.style.overflow='hidden';}
- function closeLetter(){modal.classList.remove('show');document.body.style.overflow='';}
- openBtn.addEventListener('click',openLetter);
- closeBtn.addEventListener('click',closeLetter);
- modal.addEventListener('click',function(e){if(e.target===modal)closeLetter();});
- document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLetter();});
-})();
+const modal = document.getElementById('letterModal');
+document.getElementById('openLetter').addEventListener('click', () => {
+ modal.classList.add('open'); document.body.style.overflow='hidden';
+});
+function closeModal() { modal.classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('closeLetter').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
-
-</body></html>
+</body>
+</html>
