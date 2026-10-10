@@ -44,32 +44,86 @@ footer{text-align:center;padding:25px 12px;color:#9b7881;font-size:.9rem}
 @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}.photo img{height:260px}.cards{grid-template-columns:1fr}.hero{min-height:80vh}}
 @media(max-width:480px){.gallery{grid-template-columns:1fr 1fr;gap:9px}.photo{padding:5px 5px 10px}.photo img{height:220px}nav a{font-size:.8rem;padding:6px 8px}.promises{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* نافذة الرسالة الكاملة */
+.letter-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(55,22,35,.72);backdrop-filter:blur(9px);overflow:auto}
+.letter-modal.show{display:flex;animation:modalFade .35s ease}
+@keyframes modalFade{from{opacity:0}to{opacity:1}}
+.modal-shell{position:relative;width:min(920px,100%);max-height:92vh;overflow:auto;border-radius:28px;padding:clamp(16px,3vw,30px);background:linear-gradient(145deg,#fffaf5,#fff0f5);border:2px solid #f3cfaa;box-shadow:0 25px 90px #16061066}
+.modal-close{position:sticky;top:0;float:left;border:0;background:#ffe0e8;color:#9f2f51;width:42px;height:42px;border-radius:50%;font-size:1.5rem;z-index:2}
+.modal-title{text-align:center;color:#9d3d59;margin:4px 42px 18px;font-size:clamp(1.5rem,4vw,2.4rem)}
+.photo-frame{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 auto 20px;max-width:760px;position:relative}
+.photo-frame:before,.photo-frame:after{content:"🌹 🌸 🌷 🌸 🌹";position:absolute;left:0;right:0;text-align:center;color:#c64f72;letter-spacing:6px;font-size:clamp(13px,2.5vw,22px);pointer-events:none}
+.photo-frame:before{top:-21px}.photo-frame:after{bottom:-22px}
+.photo-frame img{width:100%;height:clamp(85px,16vw,165px);object-fit:cover;border:4px solid white;border-radius:14px;box-shadow:0 5px 15px #7d35441c}
+.modal-message{background:#ffffffd9;border:1px solid #f3d5dc;border-radius:22px;padding:clamp(18px,4vw,38px);line-height:2.05;font-size:clamp(1rem,2.5vw,1.12rem);white-space:normal;position:relative}
+.modal-message:before{content:"🌸  💗  🌷  💗  🌸";display:block;text-align:center;margin-bottom:12px;font-size:1.25rem;letter-spacing:4px}
+.modal-message:after{content:"🌹  🤍  🌹";display:block;text-align:center;margin-top:16px;font-size:1.3rem;letter-spacing:8px}
+.modal-message p{margin:0 0 14px}
+.modal-sign{color:#a33456;font-weight:bold;text-align:left}
+body.modal-open{overflow:hidden}
+@media(max-width:500px){.letter-modal{padding:8px}.modal-shell{padding:12px;border-radius:20px;max-height:96vh}.photo-frame{gap:5px}.photo-frame img{border-width:3px;border-radius:9px}.photo-frame:before,.photo-frame:after{letter-spacing:1px}.modal-message{padding:15px}}
+
+
+/* Scrapbook-style home page inspired by the visual preview */
+.scrapbook-hero{min-height:calc(100vh - 48px);padding:42px 22px 58px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#ffe8d6 0,#f8d9c9 45%,#bd7b70 100%);isolation:isolate}
+.scrapbook-hero:before{background:linear-gradient(135deg,#fff3e6a8,#e9b7b9a8)}
+.scrapbook-layout{width:min(1380px,100%);margin:auto;display:grid;grid-template-columns:minmax(190px,1fr) minmax(360px,1.6fr) minmax(190px,1fr);align-items:center;gap:clamp(14px,2vw,34px);position:relative;z-index:1}
+.paper-card{position:relative;background:linear-gradient(145deg,#fff0d9,#ffe6cc 65%,#f8d9bc);color:#543a37;padding:clamp(22px,3vw,42px);border:1px solid #e5b995;box-shadow:0 18px 55px #57251d40, inset 0 0 45px #bd78451c;border-radius:5px 18px 8px 16px;transform:rotate(-.4deg);text-align:center;max-width:690px;margin:auto}
+.paper-card:before{content:"";position:absolute;inset:10px;border:1px solid #d5a88780;pointer-events:none;border-radius:3px}
+.paper-card h1{font-family:Georgia,Tahoma,serif;font-size:clamp(2.2rem,4vw,4rem);color:#9e2e48;margin:6px 0 0}
+.paper-card h1 span{color:#b42f52}.paper-rule{color:#c45c69;letter-spacing:4px;margin:4px 0 15px}
+.paper-card .lead{max-width:610px;line-height:2.15;margin:0 auto 6px;font-size:clamp(1rem,1.35vw,1.15rem)}
+.paper-card #hint{color:#89575b;margin:0 0 10px}.paper-card .gift-wrap{height:110px;margin:0 auto}.paper-card .gift{transform:scale(.82)}.paper-card .btn{position:relative;z-index:2;margin:5px 3px}.full-letter-btn{background:#a92f51!important}.paper-sign{margin-top:22px;color:#963b50;font-family:Georgia,Tahoma,serif;font-size:1.05rem;font-style:italic}.paper-sign span{font-size:1.5rem;color:#c43d5f;margin-right:8px}
+.scrapbook-photos{display:flex;flex-direction:column;gap:18px;align-items:center}.scrap-photo{width:min(100%,280px);margin:0;background:#fff7e9;padding:8px 8px 11px;box-shadow:0 9px 25px #49201e42;border:1px solid #e6cbb1;position:relative}.scrap-photo:after{content:"♡";position:absolute;top:-14px;right:12px;color:#c94b69;font-size:27px;text-shadow:0 2px 3px #fff}
+.scrap-photo img{display:block;width:100%;height:clamp(130px,17vw,210px);object-fit:cover}.scrap-photo figcaption{text-align:center;padding-top:7px;color:#8e4855;font-size:.85rem}.tilt-a{transform:rotate(-5deg)}.tilt-b{transform:rotate(4deg);margin-right:12px}.tilt-c{transform:rotate(-2deg)}.tilt-d{transform:rotate(4deg)}.tilt-e{transform:rotate(-4deg);margin-left:12px}.tilt-f{transform:rotate(3deg)}
+.scrapbook-decor{position:absolute;z-index:0;font-size:clamp(24px,3vw,42px);line-height:1.8;opacity:.65;filter:drop-shadow(0 3px 5px #fff5)}.decor-left{left:2%;top:20%}.decor-right{right:2%;bottom:18%}.scrapbook-bottom-florals{position:absolute;bottom:5px;left:0;right:0;text-align:center;letter-spacing:8px;font-size:clamp(20px,3vw,34px);opacity:.9}
+@media(max-width:900px){.scrapbook-layout{grid-template-columns:1fr;max-width:680px}.scrapbook-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;order:2}.paper-card{order:1}.scrap-photo{width:100%;padding:5px 5px 8px}.scrap-photo img{height:clamp(95px,20vw,170px)}.photos-right{order:3}.scrapbook-decor{font-size:22px}.scrapbook-hero{padding:30px 12px 50px}}
+@media(max-width:520px){.scrapbook-layout{gap:16px}.paper-card{padding:24px 17px}.paper-card .lead{font-size:.98rem}.scrapbook-photos{gap:6px}.scrap-photo img{height:105px}.scrap-photo figcaption{font-size:.7rem}.scrapbook-decor{display:none}.paper-card .btn{font-size:.9rem;padding:10px 16px}.scrapbook-bottom-florals{letter-spacing:2px}}
+
 </style>
 </head>
 <body>
 <nav><a href="#home">🏠 البداية</a><a href="#letter">💌 الرسالة</a><a href="#photos">📸 صورنا</a><a href="#love">🌷 بحب فيكي إيه</a><a href="#promise">🤍 وعدي</a></nav>
-<header class="hero" id="home">
- <div class="hero-inner">
-  <div class="eyebrow">لأحنّ وأغلى أم في الدنيا ❤️</div>
-  <h1>ماما... <span>الهدية دي ليكي</span></h1>
-  <p class="lead">كل صورة من دول وراها ذكرى، وكل كلمة هنا محاولة مني أقولك كلام ساعات بعجز أقوله وشّ لوش. أنا آسف يا ماما، وحقك عليّا.</p>
-  <div class="gift-wrap"><button class="gift" id="gift" aria-label="افتحي الهدية"><span class="bow"></span><span class="lid"></span><span class="box"></span></button></div>
-  <p id="hint">اضغطي على الهدية يا ماما 🎁</p>
-  <button class="btn" id="open">افتحي هديتك ❤️</button>
+<header class="hero scrapbook-hero" id="home">
+ <div class="scrapbook-decor decor-left" aria-hidden="true">🌹 🌸 🌷<br>💗 🌿 💗<br>🌷 🌸 🌹</div>
+ <div class="scrapbook-decor decor-right" aria-hidden="true">🌸 💗 🌹<br>🌿 🌷 🌿<br>🌹 💗 🌸</div>
+ <div class="scrapbook-layout">
+  <div class="scrapbook-photos photos-left" aria-label="صور ذكرياتنا">
+   <figure class="scrap-photo tilt-a"><img src="mom-1.jpg" alt="كريم وماما في ذكرى جميلة"><figcaption>أجمل نعمة في حياتي ♡</figcaption></figure>
+   <figure class="scrap-photo tilt-b"><img src="mom-3.jpg" alt="صورة كريم مع والدته"><figcaption>ضحكتك بالدنيا كلها</figcaption></figure>
+   <figure class="scrap-photo tilt-c"><img src="mom-4.jpg" alt="كريم وماما على البحر"><figcaption>ذكرياتنا الحلوة 🌊</figcaption></figure>
+  </div>
+  <div class="paper-card">
+   <div class="eyebrow">لأحنّ وأغلى أم في الدنيا ❤️</div>
+   <h1>ماما <span>حبيبتي</span> ♡</h1>
+   <div class="paper-rule">♡ ───── 🌷 ───── ♡</div>
+   <p class="lead">يا ماما، أنا عارف إنك بتتعبي عشاني، وإن خوفك عليّا ساعات بيبان في زعلك وقلقك. يمكن أنا اتعصبت وأنا مخنوق ومضغوط، بس ده مش مبرر لغلطي. إنتِ رقم واحد في حياتي، وأنا بحبك ومش عايز أكون سبب في زعلك أبدًا.</p>
+   <div class="gift-wrap"><button class="gift" id="gift" aria-label="افتحي الهدية"><span class="bow"></span><span class="lid"></span><span class="box"></span></button></div>
+   <p id="hint">الهدية دي ليكي من قلبي يا ماما 🎁</p>
+   <button class="btn" id="open">افتحي هديتك ❤️</button>
+   <button class="btn full-letter-btn" id="openFullLetter">💌 اقري رسالتي يا ماما</button>
+   <div class="paper-sign">بحبك يا أمي.. دايمًا وأبدًا <span>♥</span></div>
+  </div>
+  <div class="scrapbook-photos photos-right" aria-label="صور عائلية">
+   <figure class="scrap-photo tilt-d"><img src="mom-5.jpg" alt="كريم وماما في مناسبة"><figcaption>إنتِ سندي وأماني ♡</figcaption></figure>
+   <figure class="scrap-photo tilt-e"><img src="mom-2.jpg" alt="صورة قريبة لكريم ووالدته"><figcaption>بحبك يا ماما</figcaption></figure>
+   <figure class="scrap-photo tilt-f"><img src="mom-6.jpg" alt="ذكرى جميلة مع ماما"><figcaption>ربنا يخليكي ليا 🌷</figcaption></figure>
+  </div>
  </div>
+ <div class="scrapbook-bottom-florals" aria-hidden="true">🌹 🌷 🌸 💗 🌸 🌷 🌹</div>
 </header>
 
 <section id="letter"><div class="container">
  <div class="heading"><div class="eyebrow">من قلبي لقلبك</div><h2>رسالة لست الكل 💌</h2><p>اقريها للآخر يا ماما، دي أهم حاجة عندي في الصفحة دي.</p></div>
  <article class="panel letter">
-  <p>ماما حبيبتي ❤️</p>
-  <p>أنا عارف إننا اتخانقنا بسبب المذاكرة، وإنّي اتعصبت وطريقتي زعلتك. أنا آسف يا ماما، وحقك عليّا.</p>
-  <p>أنا حاسس إنك بتتعبي وبتخافي عليّا وعايزاني أبقى أحسن، وعارف إن ورا كلامك خوف وحب وتعب يمكن أنا مش بقدّرهم كويس وقت الخناق. مش عايزك تحسي إن تعبك معايا مش فارق، بالعكس، أنا شايفه ومقدّره حتى لو مش بعرف أقول ده كل مرة.</p>
-  <p>وفي نفس الوقت، نفسي تعرفي إنّي أنا كمان مش أحسن حاجة نفسيًا الفترة دي. ساعات ببقى مضغوط ومتلخبط ومش عارف أشرح اللي جوايا، وبحاول أتماسك وأكمّل. بس ده مش مبرر إني أتعصب عليكي أو أجرحك بكلامي، ومش ذنبك إنّي مش عارف أتعامل مع ضغطي صح.</p>
-  <p>أنا مش بقولك الكلام ده عشان أبرر غلطي أو أخليكي تحسي بالذنب. أنا بقوله عشان تبقي فاهمة اللي جوايا، ونحاول نساعد بعض بدل ما المذاكرة تبقى سبب إننا نزعل من بعض.</p>
-  <p>أنا محتاجك يا ماما، ومحتاج أحس إنّي أقدر أتكلم معاكي حتى لما أكون مضغوط، وإنتِ كمان من حقك تتكلمي وتعبّري عن زعلك. نفسي نتفق إن لما أعصابي تفلت، آخد شوية وقت أهدى وبعدها نرجع نتكلم باحترام، من غير صوت عالي ولا كلام يوجع.</p>
-  <p>مش مستني إنك تنسي زعلك في ثانية، ومش عايز أضغط عليكي عشان تسامحيني دلوقتي. أنا بس نفسي أصلّح اللي حصل، وأثبتلك مع الوقت إن اعتذاري حقيقي.</p>
-  <p>ربنا يخليكي ليا ويقدرني أفرح قلبك وأعوّضك عن أي تعب. بحبك يا ماما، أكتر من اللي بعرف أعبّر عنه. حقك عليّا ❤️</p>
+  <p>ماما حبيبتي ❤️ أنا عارف إننا اتخانقنا بسبب المذاكرة، وإنّي اتعصبت عليكي وعلّيت صوتي أو ضايقتك بطريقتي. أنا آسف بجد يا ماما، وحقك عليّا، ومفيش أي ضغط عندي يخلّي ده صح.</p>
+  <p>أنا عارف إنك بتشتغلي وبتتعبي، وإنك شايلة همّي وبتحاولي عشاني أكتر ما أنا متخيّل. عارف إن دمك بيبقى محروق عليّا من خوفك عليّا، وإنك نفسك تشوفيني كويس وناجح ومرتاح، وإن ورا كلامك تعب وسهر وقلق وحب كبير. يمكن أنا وقت الخناق مبعرفش أقدّر ده أو أعبّرلك عنه، بس والله أنا حاسس بتعبك ومش ناسيه، ومش عايزك أبدًا تحسي إن كل اللي بتعمليه عشاني مش فارق معايا.</p>
+  <p>إنتِ مش بس أمي يا ماما، إنتِ سندي وأماني، وإنتِ رقم واحد في حياتي. مهما حصل ومهما اتضايقت، مكانتك عندي مفيش حد ياخدها. أنا بحبك جدًا، وبخاف عليكي وعلى زعلك وتعبك، وبزعل لما أحس إني كنت سبب في إنك تتعبي أو دمك يتحرق بسببي. آخر حاجة أتمناها إنك تنامي زعلانة مني أو تحسي إن تعبك معايا ملوش قيمة.</p>
+  <p>أنا كمان الفترة دي مخنوق ومضغوط ونفسيتي مش أحسن حاجة، وساعات بحس إن حاجات كتير متراكمة عليّا ومبعرفش أشرح اللي جوايا، فبعصب بدل ما أتكلم بهدوء. بس أنا مش بقولك ده عشان أبرر غلطي أو أحط اللوم عليكي؛ أنا بس عايزك تفهمي إنّي بحاول، وإنّي محتاج أتعلم أتعامل مع الضغط بطريقة أحسن. إنتِ مش السبب في ضيقي، ومش من حقّي أطلّع ضيقي عليكي.</p>
+  <p>اللي حصل كان لحظة عصبية وغلبة شيطان، وأنا ندمان عليها، ومش عايزها تتكرر. بوعدك إني هحاول بجد أهدى قبل ما أرد، ولو حسيت إني متعصب هاخد دقيقة أسكت وأروق وبعدين نتكلم. ومش هقولك إن كل حاجة هتتغير بكلمة وخلاص؛ هحاول أثبتلك بأفعالي إني اتعلمت من اللي حصل، وإني مش عايز أخلي دمك محروق بسببي تاني. ولو غلطت، هعترف بغلطتي وأصلّحها بدل ما أجادل.</p>
+  <p>أنا عايزنا نبقى في ضهر بعض، مش المذاكرة تبقى سبب يخلينا نزعل من بعض. نفسي لما أبقى مضغوط أعرف أقولك، ونفسي أسمع خوفك عليّا من غير ما آخده هجوم عليّا. وإنتِ كمان من حقك تتعبي وتزعلي وتتكلمي، وأنا المفروض أسمعك وأحترمك زي ما إنتِ دايمًا بتحاولي تعملي معايا.</p>
+  <p>مش بطلب منك تنسي زعلك في ثانية أو تسامحيني غصب عنك. أنا بس بطلب فرصة أصلّح اللي حصل، وأوريكي إن كلامي طالع من قلبي. حقك عليّا يا أحن وأغلى أم في الدنيا. ربنا يخليكي ليا، ويطوّل في عمرك، ويقدرني أفرح قلبك وأعوّضك عن كل تعب تعبتيه عشاني.</p>
   <p class="sign">ابنك اللي بيحبك وبيحاول يبقى أحسن، كريم ❤️</p>
  </article>
 </div></section>
@@ -114,6 +168,33 @@ footer{text-align:center;padding:25px 12px;color:#9b7881;font-size:.9rem}
  <button class="btn" id="talk">ماما، ممكن نتكلم شوية؟ ❤️</button>
  <p style="font-size:.9rem;color:#9b7881;margin-top:14px">مش لازم نحل كل حاجة في لحظة؛ نبدأ بكلمتين من القلب.</p>
 </div></section>
+
+<div class="letter-modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-shell">
+  <button class="modal-close" id="closeLetter" aria-label="إغلاق الرسالة">×</button>
+  <h2 class="modal-title" id="modalTitle">ماما حبيبتي.. الرسالة دي من قلبي ❤️</h2>
+  <div class="photo-frame" aria-label="صور ذكرياتنا">
+   <img src="mom-1.jpg" alt="أنا وماما" loading="lazy">
+   <img src="mom-2.jpg" alt="ذكرى مع ماما" loading="lazy">
+   <img src="mom-3.jpg" alt="أنا وماما" loading="lazy">
+   <img src="mom-4.jpg" alt="أنا وماما على البحر" loading="lazy">
+   <img src="mom-5.jpg" alt="ذكرى مع ماما" loading="lazy">
+   <img src="mom-6.jpg" alt="أنا وماما" loading="lazy">
+  </div>
+  <article class="modal-message">
+   <p>ماما حبيبتي ❤️ أنا عارف إننا اتخانقنا بسبب المذاكرة، وإنّي اتعصبت عليكي وعلّيت صوتي أو ضايقتك بطريقتي. أنا آسف بجد يا ماما، وحقك عليّا، ومفيش أي ضغط عندي يخلّي ده صح.</p>
+   <p>أنا عارف إنك بتشتغلي وبتتعبي، وإنك شايلة همّي وبتحاولي عشاني أكتر ما أنا متخيّل. عارف إن دمك بيبقى محروق عليّا من خوفك عليّا، وإنك نفسك تشوفيني كويس وناجح ومرتاح، وإن ورا كلامك تعب وسهر وقلق وحب كبير. يمكن أنا وقت الخناق مبعرفش أقدّر ده أو أعبّرلك عنه، بس والله أنا حاسس بتعبك ومش ناسيه، ومش عايزك أبدًا تحسي إن كل اللي بتعمليه عشاني مش فارق معايا.</p>
+   <p>إنتِ مش بس أمي يا ماما، إنتِ سندي وأماني، وإنتِ رقم واحد في حياتي. مهما حصل ومهما اتضايقت، مكانتك عندي مفيش حد ياخدها. أنا بحبك جدًا، وبخاف عليكي وعلى زعلك وتعبك، وبزعل لما أحس إني كنت سبب في إنك تتعبي أو دمك يتحرق بسببي. آخر حاجة أتمناها إنك تنامي زعلانة مني أو تحسي إن تعبك معايا ملوش قيمة.</p>
+   <p>أنا كمان الفترة دي مخنوق ومضغوط ونفسيتي مش أحسن حاجة، وساعات بحس إن حاجات كتير متراكمة عليّا ومبعرفش أشرح اللي جوايا، فبعصب بدل ما أتكلم بهدوء. بس أنا مش بقولك ده عشان أبرر غلطي أو أحط اللوم عليكي؛ أنا بس عايزك تفهمي إنّي بحاول، وإنّي محتاج أتعلم أتعامل مع الضغط بطريقة أحسن. إنتِ مش السبب في ضيقي، ومش من حقّي أطلّع ضيقي عليكي.</p>
+   <p>اللي حصل كان لحظة عصبية وغلبة شيطان، وأنا ندمان عليها، ومش عايزها تتكرر. بوعدك إني هحاول بجد أهدى قبل ما أرد، ولو حسيت إني متعصب هاخد دقيقة أسكت وأروق وبعدين نتكلم. ومش هقولك إن كل حاجة هتتغير بكلمة وخلاص؛ هحاول أثبتلك بأفعالي إني اتعلمت من اللي حصل، وإني مش عايز أخلي دمك محروق بسببي تاني. ولو غلطت، هعترف بغلطتي وأصلّحها بدل ما أجادل.</p>
+   <p>أنا عايزنا نبقى في ضهر بعض، مش المذاكرة تبقى سبب يخلينا نزعل من بعض. نفسي لما أبقى مضغوط أعرف أقولك، ونفسي أسمع خوفك عليّا من غير ما آخده هجوم عليّا. وإنتِ كمان من حقك تتعبي وتزعلي وتتكلمي، وأنا المفروض أسمعك وأحترمك زي ما إنتِ دايمًا بتحاولي تعملي معايا.</p>
+   <p>مش بطلب منك تنسي زعلك في ثانية أو تسامحيني غصب عنك. أنا بس بطلب فرصة أصلّح اللي حصل، وأوريكي إن كلامي طالع من قلبي. حقك عليّا يا أحن وأغلى أم في الدنيا. ربنا يخليكي ليا، ويطوّل في عمرك، ويقدرني أفرح قلبك وأعوّضك عن كل تعب تعبتيه عشاني.</p>
+   <p class="modal-sign">ابنك اللي بيحبك وبيحاول يبقى أحسن، كريم ❤️</p>
+  </article>
+  <p style="text-align:center;color:#9d3d59;margin:18px 0 4px">🌷 بحبك يا ماما.. ربنا يخليكي ليا 🌷</p>
+ </div>
+</div>
+
 <footer>اتعملت بحب مخصوص لماما ❤️<br>من كريم، ابنك اللي بيحبك وبيحاول.</footer>
 <script>
 const gift=document.getElementById('gift'),open=document.getElementById('open'),hint=document.getElementById('hint');let opened=false;
@@ -122,5 +203,16 @@ function hearts(n=18){const symbols=['💗','💕','♡','🌸','❤️'];for(le
 function reveal(){if(!opened){opened=true;gift.classList.add('open');hint.textContent='الهدية اتفتحت.. رسالتي مستنياكي تحت 💌';open.textContent='اقري رسالتي يا ماما 💌';hearts(25);toast('دي رسالة من قلب ابنك يا ماما ❤️')}else document.getElementById('letter').scrollIntoView({behavior:'smooth'})}
 gift.addEventListener('click',reveal);open.addEventListener('click',reveal);
 document.getElementById('talk').addEventListener('click',()=>{toast('حقك عليّا يا ماما.. ينفع نتكلم شوية؟ ❤️');hearts(12)});
+
+const letterModal=document.getElementById('letterModal');
+const openFullLetter=document.getElementById('openFullLetter');
+const closeLetter=document.getElementById('closeLetter');
+function showFullLetter(){letterModal.classList.add('show');document.body.classList.add('modal-open');hearts(28);closeLetter.focus();}
+function hideFullLetter(){letterModal.classList.remove('show');document.body.classList.remove('modal-open');openFullLetter.focus();}
+openFullLetter.addEventListener('click',showFullLetter);
+closeLetter.addEventListener('click',hideFullLetter);
+letterModal.addEventListener('click',function(e){if(e.target===letterModal)hideFullLetter();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&letterModal.classList.contains('show'))hideFullLetter();});
+
 </script>
 </body></html>
